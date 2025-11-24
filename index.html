@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <title>運動習慣トラッカー</title>
-  <!-- jQueryの読み込み -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <!-- workout.js を外部ファイルとして読み込み -->
-  <script src="workout.js" defer></script>
+    <meta charset="UTF-8">
+    <title>運動習慣トラッカー</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--jsを読み込み -->
+    <script src="workout.js" defer></script>
 </head>
+
 <body>
-  <h1>運動習慣トラッカー</h1>
+    <h1>原宿トレセン</h1>
 
-  <!-- 日付表示 -->
-  <div id="date-display"></div>
+    <!-- 日付表示 -->
+    <div id="date-display"></div>
 
-  <!-- メニュー選択 -->
-  <form id="workout-form">
-    <label for="menu">メニューを選択:</label>
-    <select id="menu" name="menu">
-      <option value="squat">スクワット</option>
-      <option value="pushup">腕立て</option>
-      <option value="pullup">懸垂</option>
-    </select>
-    <button type="submit">記録する</button>
-  </form>
+    <!-- メニュー選択　プルダウンで運動メニューを選ぶ -->
+    <form id="workout-form">
+        <label for="menu">メニューを選択:</label>
+        <select id="menu" name="menu">
+            <option value="squat">スクワット</option>
+            <option value="pushup">腕立て</option>
+            <option value="pullup">懸垂</option>
+            <option value="calf">ふくらはぎ</option>
+            <option value="legraise">レッグレイズ</option>
+        </select>
 
-  <!-- 記録結果表示 -->
-  <div id="result"></div>
+        <label for="count">回数：</label>
+        <input type="number" id="count" name="count" min="1" required>
+        <button type="submit">記録する</button>
+    </form>
+
+    <!-- 記録結果表示 -->
+    <div id="result"></div>
 </body>
+
 </html>

@@ -1,54 +1,73 @@
 /* 背景画像を設定 */
 body {
   background-image: url("../img/harajukutoresen.png");
-  background-size: cover;       /* 画面いっぱいに拡大縮小 */
-  background-position: center;  /* 中央に配置 */
-  background-repeat: no-repeat; /* 繰り返しなし */
-  min-height: 100vh;            /* 画面全体をカバー */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 背景を固定して伸び感を防ぐ */
+  min-height: 100vh;
   margin: 0;
   font-family: "Arial", sans-serif;
-  color: #fff;                  /* テキストを白にして見やすく */
+  color: #fff;
 }
 
 /* ヘッダ部分 */
 header {
   text-align: center;
-  padding: 10px; /* ← 20pxから10pxに変更して縦幅を狭く */
+  padding: 10px;
   background-color: rgba(0,0,0,0.5);
-  border-radius: 8px;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8em; /* 少し小さめにしてさらにコンパクトに */
+  font-size: 1.8em;
 }
 
 #date-display {
-  margin-top: 3px; /* 余白も少し狭める */
+  margin-top: 3px;
   font-size: 0.9em;
   color: #ffeb3b;
 }
 
+/* メインコンテナ：PCでは横並び */
+#main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+/* 左パネル：トレーナー＋フォーム */
+#left-panel {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 
 /* フォーム部分 */
 form {
   background-color: rgba(0,0,0,0.4);
   padding: 15px;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 500px;
   border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-/* ラベルと入力を横並びにする行 */
 .form-row {
   margin-bottom: 10px;
 }
 
 .form-row label {
   display: inline-block;
-  width: 140px;          /* ラベルの幅を揃える */
+  width: 140px;
   vertical-align: middle;
 }
 
@@ -56,62 +75,153 @@ form {
 .form-row input {
   display: inline-block;
   vertical-align: middle;
-  width: calc(100% - 150px); /* ラベル分を除いた幅 */
+  width: calc(100% - 150px);
   max-width: 300px;
+  box-sizing: border-box;
 }
 
 form button {
   margin-top: 15px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   font-size: 1em;
+  min-width: 120px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* 結果表示部分 */
-#result {
-  background-color: rgba(0,0,0,0.6);
-  padding: 15px;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 8px;
-  white-space: pre-line; /* 改行を反映 */
+/* レース日表示ラベル */
+.race-date-label {
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #ffeb3b;
+  font-weight: bold;
 }
 
 /* トレーナー画像＋吹き出し */
 .trainer-box {
   text-align: center;
-  margin: 10px auto;
 }
 
 .trainer-image {
-  width: 300px;
+  width: 320px;   /* PCでは固定サイズ */
   height: auto;
-  display: block;       /* ブロック要素にして改行を強制 */
-  margin: 0 auto;       /* 中央に配置 */
+  display: block;
+  margin: 0 auto;
 }
 
 .speech-below {
-  display: block;       /* ブロック要素にして画像の下に配置 */
-  margin: 5px auto 0;  /* 上に余白を入れて中央揃え */
+  display: block;
+  margin: 5px auto 0;
   background-color: #fff;
   color: #333;
-  padding: 5px 5px;
+  padding: 5px 10px;
   border-radius: 10px;
   border: 2px solid #333;
   font-weight: bold;
-  max-width: 300px;
+  max-width: 320px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   position: relative;
 }
 
-/* 吹き出しの三角形（画像からセリフが出ているように見せる） */
+/* 吹き出しの三角形 */
 .speech-below::before {
   content: "";
   position: absolute;
-  top: -20px;           /* 吹き出しの上に配置 */
-  left: 50%;            /* 中央に配置 */
+  top: -20px;
+  left: 50%;
   transform: translateX(-50%);
   border: 10px solid transparent;
   border-top: none;
-  border-bottom-color: #fff; /* 下向き三角形を上に見せる */
+  border-bottom-color: #fff;
+}
+
+/* 右パネル：グラフ＋ログ */
+#right-panel {
+  width: 60%;
+  display: flex;
+  flex-direction: column; /* 縦並びにする */
+  align-items: center;
+  gap: 10px;              /* グラフとログの間に余白 */
+}
+
+/* グラフ部分：PCでは固定サイズ */
+#progressChart {
+  width: 700px;
+  height: 700px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ログエリア */
+#log-area {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+#log-area h3 {
+  margin: 0 0 10px;
+  font-size: 1em;
+  text-align: center;
+  color: #ffffff;
+}
+
+#log-list {
+  max-height: 150px;   /* 高さ制限 */
+  overflow-y: auto;    /* 内部スクロール */
+  font-size: 0.9em;
+}
+
+.log-entry {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 4px 0;
+}
+
+/* =========================
+   レスポンシブ対応
+   ========================= */
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column; /* 縦並びに切り替え */
+    align-items: center;
+    gap: 20px;
+  }
+
+  #left-panel,
+  #right-panel {
+    width: 100%;
+  }
+
+  .trainer-image {
+    width: 120px; /* スマホでは縮小 */
+  }
+
+  #progressChart {
+    width: 300px;
+    height: 300px; /* グラフも縮小 */
+  }
+
+  #log-area {
+    max-width: 90%;
+  }
+
+  form {
+    max-width: 90%;
+  }
+
+  .speech-below {
+    font-size: 14px;
+    max-width: 240px;
+  }
+
+  .race-date-label {
+    display: block;
+    margin-top: 8px;
+    margin-left: 0;
+    text-align: center;
+  }
 }

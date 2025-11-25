@@ -2,93 +2,109 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <title>原宿トレーニングセンター 🏇</title>
-    <!-- jQueryの読み込み -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <!-- workout.js を外部ファイルとして読み込み -->
-    <script src="workout.js" defer></script>
-    <!-- CSSを読み込み -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>原宿トレーニングセンター 🏇</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- workout.js -->
+  <script src="workout.js" defer></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>原宿トレーニングセンター 🏇</h1>
-        <!-- 日付表示 -->
-        <div id="date-display"></div>
-    </header>
+  <header>
+    <h1>原宿トレーニングセンター 🏇</h1>
+    <div id="date-display"></div>
+  </header>
 
-    <!-- レース選択フォーム -->
-    <form id="race-form">
+  <div id="main-container">
+    <!-- 左パネル：トレーナー＋セリフ＋フォーム -->
+    <div id="left-panel">
+      <div class="trainer-box">
+        <img src="img/trainer1.png" alt="トレーナー" id="trainer-image" class="trainer-image">
+        <div class="speech-below">目標レースを設定しましょう！</div>
+      </div>
+
+      <!-- レース選択フォーム -->
+      <form id="race-form">
         <div class="form-row">
-            <label for="race">目標レースを選択:</label>
-            <select id="race" name="race">
-                <optgroup label="GⅢ">
-                    <option value="オーシャンS">GⅢ オーシャンS 中山芝1,200 (上半身強め)</option>
-                    <option value="中京記念">GⅢ 中京記念 中京芝1,600 (腹筋・背面やや強め)</option>
-                    <option value="新潟記念">GⅢ 新潟記念 新潟芝2,000 (下半身強め)</option>
-                </optgroup>
-                <optgroup label="GⅡ">
-                    <option value="京都記念">GⅡ 京都記念 京都芝2,200 (バランス型)</option>
-                    <option value="京王杯スプリングC">GⅡ 京王杯スプリングC 東京芝1,400 (プッシュ系強め)</option>
-                    <option value="ステイヤーズS">GⅡ ステイヤーズS (下半身強化)</option>
-                </optgroup>
-                <optgroup label="GⅠ">
-                    <option value="日本ダービー">GⅠ 日本ダービー 東京芝2,400 (脚メイン)</option>
-                    <option value="マイルチャンピオンシップ">GⅠ マイルCS 京都芝1,600 (プッシュ＋体幹強め)</option>
-                    <option value="有馬記念">GⅠ 有馬記念 中山芝2,500 (総決算・全種目高水準)</option>
-                </optgroup>
-            </select>
+          <label for="race">目標レースを選択:</label>
+          <select id="race" name="race">
+            <optgroup label="GⅢ">
+              <option value="オーシャンS">GⅢ オーシャンS 中山芝1,200 (上半身強め)</option>
+              <option value="中京記念">GⅢ 中京記念 中京芝1,600 (腹筋・背面やや強め)</option>
+              <option value="新潟記念">GⅢ 新潟記念 新潟芝2,000 (下半身強め)</option>
+            </optgroup>
+            <optgroup label="GⅡ">
+              <option value="京都記念">GⅡ 京都記念 京都芝2,200 (バランス型)</option>
+              <option value="京王杯スプリングC">GⅡ 京王杯スプリングC 東京芝1,400 (プッシュ系強め)</option>
+              <option value="ステイヤーズS">GⅡ ステイヤーズS (下半身強化)</option>
+            </optgroup>
+            <optgroup label="GⅠ">
+              <option value="日本ダービー">GⅠ 日本ダービー 東京芝2,400 (脚メイン)</option>
+              <option value="マイルチャンピオンシップ">GⅠ マイルCS 京都芝1,600 (プッシュ＋体幹強め)</option>
+              <option value="有馬記念">GⅠ 有馬記念 中山芝2,500 (総決算・全種目高水準)</option>
+            </optgroup>
+          </select>
         </div>
 
         <div class="form-row">
-            <label for="days">レース日数:</label>
-            <select id="days" name="days">
-                <option value="1">1日</option>
-                <option value="2">2日</option>
-                <option value="3">3日</option>
-                <option value="4">4日</option>
-                <option value="5">5日</option>
-                <option value="6">6日</option>
-                <option value="7">1週間</option>
-            </select>
-        </div>
-
-        <button type="submit">目標レース設定</button>
-    </form>
-
-    <!-- メニュー選択フォーム -->
-    <form id="workout-form">
-        <div class="form-row">
-            <label for="menu">メニューを選択:</label>
-            <select id="menu" name="menu">
-                <option value="squat">スクワット</option>
-                <option value="pushup">腕立て</option>
-                <option value="pullup">懸垂</option>
-                <option value="calf">ふくらはぎ</option>
-                <option value="legraise">レッグレイズ</option>
-            </select>
+          <label for="days">レース日数:</label>
+          <select id="days" name="days">
+            <option value="1">1日</option>
+            <option value="2">2日</option>
+            <option value="3">3日</option>
+            <option value="4">4日</option>
+            <option value="5">5日</option>
+            <option value="6">6日</option>
+            <option value="7">1週間</option>
+          </select>
         </div>
 
         <div class="form-row">
-            <label for="count">回数:</label>
-            <input type="number" id="count" name="count" min="1" required>
+          <button type="submit">目標レース設定</button>
+          <span id="race-date-display" class="race-date-label"></span>
+        </div>
+      </form>
+
+      <!-- メニュー選択フォーム -->
+      <form id="workout-form">
+        <div class="form-row">
+          <label for="menu">メニューを選択:</label>
+          <select id="menu" name="menu">
+            <option value="squat">スクワット</option>
+            <option value="pushup">腕立て</option>
+            <option value="pullup">懸垂</option>
+            <option value="calf">ふくらはぎ</option>
+            <option value="legraise">レッグレイズ</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="count">回数:</label>
+          <select id="count" name="count">
+            <!-- JSで1～100回を生成 -->
+          </select>
         </div>
 
         <button type="submit">記録する</button>
-    </form>
+      </form>
+    </div>
 
-    <!-- 結果表示 -->
-    <div id="result"></div>
+    <!-- 右パネル：グラフ＋ログ -->
+    <div id="right-panel">
+      <canvas id="progressChart"></canvas>
 
-    <!-- トレーナー画像＋吹き出し -->
-<!-- トレーナー画像＋吹き出し -->
-<div class="trainer-box">
-    <img src="img/trainer1.png" alt="トレーナー" id="trainer-image" class="trainer-image">
-    <div class="speech-below">目標レースを設定しましょう！</div>
-</div>
-
+      <!-- ログ表示エリア -->
+      <div id="log-area">
+        <h3>トレーニングログ</h3>
+        <div id="log-list"></div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

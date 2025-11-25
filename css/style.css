@@ -13,22 +13,23 @@ body {
 /* ヘッダ部分 */
 header {
   text-align: center;
-  padding: 20px;
-  background-color: rgba(0,0,0,0.5); /* 半透明で背景画像に馴染ませる */
+  padding: 10px; /* ← 20pxから10pxに変更して縦幅を狭く */
+  background-color: rgba(0,0,0,0.5);
   border-radius: 8px;
   color: #fff;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.8em; /* 少し小さめにしてさらにコンパクトに */
 }
 
 #date-display {
-  margin-top: 5px;
-  font-size: 1em;
-  color: #ffeb3b; /* 日付は黄色で強調 */
+  margin-top: 3px; /* 余白も少し狭める */
+  font-size: 0.9em;
+  color: #ffeb3b;
 }
+
 
 /* フォーム部分 */
 form {
@@ -40,7 +41,30 @@ form {
   border-radius: 8px;
 }
 
+/* ラベルと入力を横並びにする行 */
+.form-row {
+  margin-bottom: 10px;
+}
 
+.form-row label {
+  display: inline-block;
+  width: 140px;          /* ラベルの幅を揃える */
+  vertical-align: middle;
+}
+
+.form-row select,
+.form-row input {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 150px); /* ラベル分を除いた幅 */
+  max-width: 300px;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 4px 8px;
+  font-size: 1em;
+}
 
 /* 結果表示部分 */
 #result {
@@ -51,4 +75,43 @@ form {
   max-width: 500px;
   border-radius: 8px;
   white-space: pre-line; /* 改行を反映 */
+}
+
+/* トレーナー画像＋吹き出し */
+.trainer-box {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.trainer-image {
+  width: 300px;
+  height: auto;
+  display: block;       /* ブロック要素にして改行を強制 */
+  margin: 0 auto;       /* 中央に配置 */
+}
+
+.speech-below {
+  display: block;       /* ブロック要素にして画像の下に配置 */
+  margin: 5px auto 0;  /* 上に余白を入れて中央揃え */
+  background-color: #fff;
+  color: #333;
+  padding: 5px 5px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  font-weight: bold;
+  max-width: 300px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* 吹き出しの三角形（画像からセリフが出ているように見せる） */
+.speech-below::before {
+  content: "";
+  position: absolute;
+  top: -20px;           /* 吹き出しの上に配置 */
+  left: 50%;            /* 中央に配置 */
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top: none;
+  border-bottom-color: #fff; /* 下向き三角形を上に見せる */
 }

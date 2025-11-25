@@ -19,6 +19,21 @@ $(function() {
   // 進捗データ（累計）
   let progress = { pushup: 0, squat: 0, pullup: 0, legraise: 0, calf: 0 };
 
+  // 共通：画像＋セリフ切り替え関数
+  function switchTrainerGif(message) {
+    // セリフを変更
+    $(".speech-below").text(message);
+
+    // 画像をGIFに切り替え
+    $("#trainer-image").attr("src", "movie/trainergif.gif");
+
+    // 3秒後に元の画像とセリフに戻す
+    setTimeout(() => {
+      $("#trainer-image").attr("src", "img/trainer1.png");
+      $(".speech-below").text("目標レースを設定しましょう！");
+    }, 3000);
+  }
+
   // レース選択処理
   $("#race-form").on("submit", function(e) {
     e.preventDefault();
@@ -49,6 +64,9 @@ $(function() {
     }
     goalText += `\nレース終了日時: ${raceEnd.toLocaleString()}`;
     $("#result").text(goalText);
+
+    // 画像＋セリフ切り替え
+    switchTrainerGif("目標レースが決まったね！頑張ろう！");
   });
 
   // 運動記録処理
@@ -76,5 +94,8 @@ $(function() {
     }
 
     $("#result").text(resultText);
+
+    // 画像＋セリフ切り替え
+    switchTrainerGif("トレーニングお疲れ様！レースまでもう少し頑張ろう！");
   });
 });

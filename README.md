@@ -21,7 +21,7 @@ https://ynproject.github.io/XXXXXXX
 - リセットの処理を入れるのが難しかったです。 
 
 ## ⑦フリー項目（感想、シェアしたいこと等なんでも）
-- グラフはこちらを使いました→　https://cdn.jsdelivr.net/npm/chart.js
+- グラフはこちらを使いました→　https://www.chartjs.org/docs/latest/getting-started/
 
 プレイイメージです
 

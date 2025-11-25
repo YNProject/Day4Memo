@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>原宿トレセン</title>
+    <title>運動習慣トラッカー 🏇</title>
     <!-- jQueryの読み込み -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!-- workout.js を外部ファイルとして読み込み -->
@@ -11,35 +11,48 @@
 </head>
 
 <body>
-    <h1>原宿トレセン 🏇</h1>
+    <h1>運動習慣トラッカー 🏇</h1>
 
     <!-- 日付表示 -->
     <div id="date-display"></div>
 
-    <!-- レース選択 -->
+    <!-- レース選択フォーム -->
     <form id="race-form">
         <label for="race">目標レースを選択:</label>
         <select id="race" name="race">
             <optgroup label="GⅢ">
-    <option value="オーシャンS">GⅢ オーシャンS 中山芝1,200(上半身強め)</option>
-    <option value="中京記念">GⅢ 中京記念 中京芝1,600(腹筋・背面やや強め)</option>
-    <option value="新潟記念">GⅢ 新潟記念 新潟芝2,000(下半身強め)</option>
+                <option value="オーシャンS">GⅢ オーシャンS 中山芝1,200 (上半身強め)</option>
+                <option value="中京記念">GⅢ 中京記念 中京芝1,600 (腹筋・背面やや強め)</option>
+                <option value="新潟記念">GⅢ 新潟記念 新潟芝2,000 (下半身強め)</option>
             </optgroup>
             <optgroup label="GⅡ">
-                <option value="京都記念">GⅡ 京都記念 京都芝2,200(バランス型)</option>
-                <option value="京王杯スプリングC">GⅡ 京王杯スプリングC 東京芝1,400(プッシュ系強め)</option>
-                <option value="ステイヤーズS">GⅡ ステイヤーズS(下半身強化)</option>
+                <option value="京都記念">GⅡ 京都記念 京都芝2,200 (バランス型)</option>
+                <option value="京王杯スプリングC">GⅡ 京王杯スプリングC 東京芝1,400 (プッシュ系強め)</option>
+                <option value="ステイヤーズS">GⅡ ステイヤーズS (下半身強化)</option>
             </optgroup>
             <optgroup label="GⅠ">
-                <option value="日本ダービー">GⅠ 日本ダービー 東京芝2,400(脚メイン)</option>
-                <option value="マイルチャンピオンシップ">GⅠ マイルCS 京都芝1,600(プッシュ＋体幹強め)</option>
-                <option value="有馬記念">GⅠ 有馬記念 中山芝2,500(総決算・全種目高水準)</option>
+                <option value="日本ダービー">GⅠ 日本ダービー 東京芝2,400 (脚メイン)</option>
+                <option value="マイルチャンピオンシップ">GⅠ マイルCS 京都芝1,600 (プッシュ＋体幹強め)</option>
+                <option value="有馬記念">GⅠ 有馬記念 中山芝2,500 (総決算・全種目高水準)</option>
             </optgroup>
         </select>
-        <button type="submit">レース開始</button>
+
+        <!-- レース日数選択 -->
+        <label for="days">レース日数:</label>
+        <select id="days" name="days">
+            <option value="1">1日</option>
+            <option value="2">2日</option>
+            <option value="3">3日</option>
+            <option value="4">4日</option>
+            <option value="5">5日</option>
+            <option value="6">6日</option>
+            <option value="7">1週間</option>
+        </select>
+
+    <button type="submit">目標レース設定</button>
     </form>
 
-    <!-- メニュー選択 -->
+    <!-- メニュー選択フォーム -->
     <form id="workout-form">
         <label for="menu">メニューを選択:</label>
         <select id="menu" name="menu">
@@ -56,7 +69,7 @@
         <button type="submit">記録する</button>
     </form>
 
-    <!-- 記録結果表示 -->
+    <!-- 結果表示 -->
     <div id="result"></div>
 </body>
 

@@ -28,6 +28,12 @@
         <div class="speech-below">目標レースを設定しましょう！</div>
       </div>
 
+      <div class="form-row">
+  <label for="horse-name">馬名</label>
+  <input type="text" id="horse-name" placeholder="馬名を入力">
+</div>
+
+
       <!-- レース選択フォーム -->
       <form id="race-form">
         <div class="form-row">
@@ -92,6 +98,25 @@
 
         <button type="submit">記録する</button>
       </form>
+
+      <!-- 出走取り消しボタン -->
+<div id="reset-area">
+  <button id="reset-button">出走取り消し<br>
+    （今回トレーニングログリセット）</button>
+</div>
+
+<!-- 出走・リセットボタン -->
+<div id="race-action-area">
+  <button id="race-button">レース出走</button>
+  <button id="next-race-button" style="display: none;">次のレースへ</button>
+</div>
+
+<div id="history-reset-area">
+  <button id="history-reset-button">戦績リセット</button>
+</div>
+
+
+
     </div>
 
     <!-- 右パネル：グラフ＋ログ -->
@@ -103,6 +128,12 @@
         <h3>トレーニングログ</h3>
         <div id="log-list"></div>
       </div>
+
+      <div id="history-area">
+  <h3>過去の戦績</h3>
+  <div id="history-list"></div>
+</div>
+
     </div>
   </div>
 </body>

@@ -135,6 +135,52 @@ form button {
   border-bottom-color: #fff;
 }
 
+#reset-area {
+  margin-top: 4px;
+  text-align: center;
+}
+
+#reset-button {
+  padding: 6px 20px;
+  font-size: 12px;
+  background-color: #ff4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+#race-action-area {
+  margin-top: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#race-button,
+#next-race-button {
+  padding: 6px 24px;
+  font-size: 12px;
+  background-color: #ff8800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+#history-reset-button {
+  padding: 6px 20px;
+  font-size: 12px;
+  background-color: #666;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
 /* 右パネル：グラフ＋ログ */
 #right-panel {
   width: 60%;
@@ -180,6 +226,41 @@ form button {
   border-bottom: 1px solid rgba(255,255,255,0.3);
   padding: 4px 0;
 }
+
+#history-area {
+  margin-top: 20px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  max-width: 800px;
+}
+
+#history-area h3 {
+  margin: 0 0 10px;
+  font-size: 1em;
+  text-align: center;
+  color: #ffeb3b;
+}
+
+#history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.9em;
+}
+
+.history-entry {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 4px 0;
+}
+
+#history-reset-area {
+  margin-top: 4px;
+  text-align: center;
+}
+
+
+
 
 /* =========================
    レスポンシブ対応

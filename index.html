@@ -3,19 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>運動習慣トラッカー 🏇</title>
+    <title>原宿トレーニングセンター 🏇</title>
     <!-- jQueryの読み込み -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!-- workout.js を外部ファイルとして読み込み -->
     <script src="workout.js" defer></script>
+    <!-- CSSを読み込み -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
-    <h1>運動習慣トラッカー 🏇</h1>
+    <header>
+    <h1>原宿トレーニングセンター 🏇</h1>
 
     <!-- 日付表示 -->
     <div id="date-display"></div>
-
+</header>
     <!-- レース選択フォーム -->
     <form id="race-form">
         <label for="race">目標レースを選択:</label>
@@ -36,6 +40,7 @@
                 <option value="有馬記念">GⅠ 有馬記念 中山芝2,500 (総決算・全種目高水準)</option>
             </optgroup>
         </select>
+        <br>
 
         <!-- レース日数選択 -->
         <label for="days">レース日数:</label>
@@ -48,6 +53,7 @@
             <option value="6">6日</option>
             <option value="7">1週間</option>
         </select>
+        <br>
 
     <button type="submit">目標レース設定</button>
     </form>
@@ -62,9 +68,11 @@
             <option value="calf">ふくらはぎ</option>
             <option value="legraise">レッグレイズ</option>
         </select>
+        <br>
 
         <label for="count">回数:</label>
         <input type="number" id="count" name="count" min="1" required>
+        <br>
 
         <button type="submit">記録する</button>
     </form>

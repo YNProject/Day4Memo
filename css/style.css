@@ -1,0 +1,54 @@
+/* 背景画像を設定 */
+body {
+  background-image: url("../img/harajukutoresen.png");
+  background-size: cover;       /* 画面いっぱいに拡大縮小 */
+  background-position: center;  /* 中央に配置 */
+  background-repeat: no-repeat; /* 繰り返しなし */
+  min-height: 100vh;            /* 画面全体をカバー */
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: #fff;                  /* テキストを白にして見やすく */
+}
+
+/* ヘッダ部分 */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.5); /* 半透明で背景画像に馴染ませる */
+  border-radius: 8px;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+#date-display {
+  margin-top: 5px;
+  font-size: 1em;
+  color: #ffeb3b; /* 日付は黄色で強調 */
+}
+
+/* フォーム部分 */
+form {
+  background-color: rgba(0,0,0,0.4);
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+
+
+/* 結果表示部分 */
+#result {
+  background-color: rgba(0,0,0,0.6);
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  white-space: pre-line; /* 改行を反映 */
+}

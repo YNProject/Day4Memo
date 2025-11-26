@@ -187,7 +187,7 @@ form button {
   display: flex;
   flex-direction: column; /* 縦並びにする */
   align-items: center;
-  gap: 10px;              /* グラフとログの間に余白 */
+  gap: 0px;              /* グラフとログの間に余白 */
 }
 
 /* グラフ部分：PCでは固定サイズ */
@@ -267,29 +267,33 @@ form button {
    ========================= */
 @media (max-width: 768px) {
   #main-container {
-    flex-direction: column; /* 縦並びに切り替え */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
-  #left-panel,
-  #right-panel {
+  #left-panel {
     width: 100%;
+    order: 1; /* 左パネルを上に */
   }
 
+  #right-panel {
+    width: 100%;
+    order: 2; /* 右パネルを下に */
+  }
+
+
   .trainer-image {
-    width: 120px; /* スマホでは縮小 */
+    width: 120px;
   }
 
   #progressChart {
     width: 300px;
-    height: 300px; /* グラフも縮小 */
+    height: 300px;
   }
 
-  #log-area {
-    max-width: 90%;
-  }
-
+  #log-area,
   form {
     max-width: 90%;
   }
@@ -305,4 +309,6 @@ form button {
     margin-left: 0;
     text-align: center;
   }
+
+  
 }

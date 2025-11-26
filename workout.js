@@ -11,15 +11,15 @@ $(function() {
 
   // 1日分の目標値
   const dailyRaceGoals = {
-    "オーシャンS": { pushup: 30, squat: 30, pullup: 10, legraise: 40, calf: 30 },
-    "中京記念": { pushup: 30, squat: 40, pullup: 10, legraise: 30, calf: 40 },
-    "新潟記念": { pushup: 40, squat: 30, pullup: 10, legraise: 30, calf: 30 },
-    "京都記念": { pushup: 50, squat: 50, pullup: 10, legraise: 50, calf: 50 },
-    "京王杯スプリングC": { pushup: 60, squat: 50, pullup: 10, legraise: 40, calf: 50 },
-    "ステイヤーズS": { pushup: 40, squat: 60, pullup: 10, legraise: 50, calf: 60 },
-    "日本ダービー": { pushup: 70, squat: 100, pullup: 20, legraise: 80, calf: 120 },
-    "マイルチャンピオンシップ": { pushup: 90, squat: 80, pullup: 20, legraise: 90, calf: 90 },
-    "有馬記念": { pushup: 80, squat: 100, pullup: 20, legraise: 80, calf: 100 }
+    "オーシャンS": { pushup: 20, squat: 20, pullup: 10, legraise: 20, calf: 30 },
+    "中京記念": { pushup: 30, squat: 20, pullup: 10, legraise: 30, calf: 40 },
+    "新潟記念": { pushup: 20, squat: 30, pullup: 20, legraise: 20, calf: 20 },
+    "京都記念": { pushup: 40, squat: 40, pullup: 40, legraise: 40, calf: 40 },
+    "京王杯スプリングC": { pushup: 80, squat: 30, pullup: 20, legraise: 30, calf: 30 },
+    "ステイヤーズS": { pushup: 20, squat: 100, pullup: 50, legraise: 20, calf: 100 },
+    "日本ダービー": { pushup: 70, squat: 120, pullup: 70, legraise: 100, calf: 120 },
+    "マイルチャンピオンシップ": { pushup: 120, squat: 70, pullup: 120, legraise: 70, calf: 70 },
+    "有馬記念": { pushup: 100, squat: 100, pullup: 100, legraise: 100, calf: 100 }
   };
 
   // 進捗データ（累計）

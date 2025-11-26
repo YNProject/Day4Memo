@@ -7,7 +7,7 @@
 - レース日が来たら出走しましょう！運動目標の達成度合いによりレース結果が変わります
 
 ## ③アプリのデプロイURL
-https://ynproject.github.io/XXXXXXX
+https://ynproject.github.io/Day4Memo/
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ID: 今回無し

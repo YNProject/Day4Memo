@@ -3,22 +3,22 @@ $(function() {
   const now = new Date();
   $("#date-display").text("現在の日付: " + now.toLocaleString());
 
-  // 回数プルダウン生成（1～100）
+  // 運動回数のプルダウン生成（1～100）
   const countSelect = $("#count");
   for (let i = 1; i <= 100; i++) {
     countSelect.append(`<option value="${i}">${i}回</option>`);
   }
 
-  // 1日分の目標値
+  // レース別の1日分の目標値
   const dailyRaceGoals = {
-    "オーシャンS": { pushup: 20, squat: 20, pullup: 10, legraise: 20, calf: 30 },
-    "中京記念": { pushup: 30, squat: 20, pullup: 10, legraise: 30, calf: 40 },
-    "新潟記念": { pushup: 20, squat: 30, pullup: 20, legraise: 20, calf: 20 },
+    "オーシャンS": { pushup: 20, squat: 10, pullup: 20, legraise: 20, calf: 10 },
+    "中京記念": { pushup: 20, squat: 20, pullup: 20, legraise: 40, calf: 20 },
+    "新潟記念": { pushup: 10, squat: 50, pullup: 10, legraise: 10, calf: 40 },
     "京都記念": { pushup: 40, squat: 40, pullup: 40, legraise: 40, calf: 40 },
-    "京王杯スプリングC": { pushup: 80, squat: 30, pullup: 20, legraise: 30, calf: 30 },
-    "ステイヤーズS": { pushup: 20, squat: 100, pullup: 50, legraise: 20, calf: 100 },
-    "日本ダービー": { pushup: 70, squat: 120, pullup: 70, legraise: 100, calf: 120 },
-    "マイルチャンピオンシップ": { pushup: 120, squat: 70, pullup: 120, legraise: 70, calf: 70 },
+    "京王杯スプリングC": { pushup: 100, squat: 20, pullup: 20, legraise: 20, calf: 20 },
+    "ステイヤーズS": { pushup: 20, squat: 100, pullup: 30, legraise: 20, calf: 100 },
+    "日本ダービー": { pushup: 60, squat: 140, pullup: 60, legraise: 80, calf: 150 },
+    "マイルチャンピオンシップ": { pushup: 140, squat: 60, pullup: 80, legraise: 80, calf: 60 },
     "有馬記念": { pushup: 100, squat: 100, pullup: 100, legraise: 100, calf: 100 }
   };
 
@@ -36,7 +36,7 @@ $(function() {
     localStorage.setItem("horseName", name);
   });
 
-  // セリフ表示（馬名呼び掛け形式）
+  // セリフ表示（馬名呼び掛けのところ）
   function speakWithHorse(message) {
     const horseName = getHorseName();
     if (horseName) {

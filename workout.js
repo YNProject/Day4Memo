@@ -208,6 +208,7 @@ $(function() {
       return;
     }
 
+    // 目標達成判定
     let allClear = true;
     let allOver105 = true;
 

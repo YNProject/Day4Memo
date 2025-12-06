@@ -28,5 +28,5 @@ https://ynproject.github.io/Day4Memo/
 
 プレイイメージです
 
-|:-------------:|:--------------------:|
-| ![GIF 1](./media/XXXX.gif) | ![GIF 2](./media/XXXX.gif) |
+
+<img src="./movie/memoimg.gif" width="600">
